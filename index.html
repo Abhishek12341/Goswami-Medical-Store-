@@ -18,7 +18,6 @@ min-height:75vh;color:#fff;display:flex;align-items:center;justify-content:cente
 .call{background:#16a34a;color:#fff}
 .map{background:#2563eb;color:#fff}
 .wa{background:#25D366;color:#fff}
-.appointment{background:#f59e0b;color:#fff}
 .section{max-width:1100px;margin:auto;padding:50px 20px}
 .card{background:#fff;padding:25px;border-radius:15px;box-shadow:0 2px 12px rgba(0,0,0,.08);margin:15px 0}
 .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:15px}
@@ -28,7 +27,6 @@ min-height:75vh;color:#fff;display:flex;align-items:center;justify-content:cente
 .logo{font-size:40px}
 .float-wa{position:fixed;right:20px;bottom:20px;background:#25D366;color:#fff;padding:15px 18px;border-radius:50px;text-decoration:none;font-weight:bold}
 footer{background:#111;color:#fff;text-align:center;padding:20px}
-input,textarea{font-family:inherit}
 </style>
 </head>
 <body>
@@ -43,7 +41,6 @@ input,textarea{font-family:inherit}
 <a class="btn call" href="tel:9258225297">📞 Call 9258225297</a>
 <a class="btn wa" href="https://wa.me/918077525297">💬 WhatsApp</a>
 <a class="btn map" href="https://maps.app.goo.gl/Qecp9mamppoERA5h7?g_st=atm">📍 Directions</a>
-<a class="btn appointment" href="#home-delivery">🚚 Home Delivery</a>
 </div>
 </section>
 
@@ -55,38 +52,27 @@ input,textarea{font-family:inherit}
 <p><b>Address:</b> Basant Gali, Kharkhari, Bhimgoda, Haridwar, Uttarakhand - 249401</p>
 </div>
 
-<div class="card" id="home-delivery">
-<h2>🚚 Request Home Delivery</h2>
-<p style="margin:10px 0 15px">
-Fill your details and submit. WhatsApp will open automatically. Attach your prescription photo and send the message.
-</p>
-
-<form onsubmit="sendToWhatsApp(); return false;">
-<input type="text" id="name" placeholder="Your Name" required
-style="width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:8px;">
-
-<input type="tel" id="mobile" placeholder="Mobile Number" required
-style="width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:8px;">
-
-<textarea id="address" placeholder="Delivery Address" required
-style="width:100%;padding:12px;margin:8px 0;height:100px;border:1px solid #ccc;border-radius:8px;"></textarea>
-
-<button type="submit" class="btn appointment">
-🚚 Submit Order on WhatsApp
-</button>
-</form>
-
-<p style="margin-top:10px;font-size:14px;color:#555;">
-📸 After clicking submit, please attach your prescription photo on WhatsApp and send the message.
-</p>
-</div>
-
 <h2 style="margin:20px 0">Our Services</h2>
 <div class="features">
 <div class="feature">💊 All Types of Medicines</div>
 <div class="feature">🚚 Home Delivery Available</div>
 <div class="feature">📋 Prescription Medicines</div>
 <div class="feature">🩺 Healthcare Products</div>
-<div class="feature">📸 Upload Prescription on WhatsApp</div>
-<div class="feature">💬 Medicine Availability on WhatsApp</div>
 </div>
+
+<h2 style="margin:30px 0 15px">Store Gallery</h2>
+<div class="gallery">
+<img src="store1.png">
+<img src="store2.png">
+<img src="store3.png">
+</div>
+</div>
+
+<a class="float-wa" href="https://wa.me/918077525297">WhatsApp Us</a>
+
+<footer>
+© Goswami Medical Store • Haridwar
+</footer>
+
+</body>
+</html>
