@@ -7,17 +7,12 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Segoe UI,Arial,sans-serif;background:#f5f7fa;color:#222}
-.hero{
-background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('store1.png');
-background-size:cover;background-position:center;
-min-height:75vh;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px}
+.hero{background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('store1.png');background-size:cover;background-position:center;min-height:75vh;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px}
 .hero-content{max-width:800px}
 .hero h1{font-size:3rem;margin-bottom:10px}
 .hero p{font-size:1.2rem;margin-bottom:20px}
-.btn{display:inline-block;padding:12px 20px;margin:6px;border-radius:30px;text-decoration:none;font-weight:bold}
-.call{background:#16a34a;color:#fff}
-.map{background:#2563eb;color:#fff}
-.wa{background:#25D366;color:#fff}
+.btn{display:inline-block;padding:12px 20px;margin:6px;border-radius:30px;text-decoration:none;font-weight:bold;border:none;cursor:pointer}
+.call{background:#16a34a;color:#fff}.map{background:#2563eb;color:#fff}.wa{background:#25D366;color:#fff}.delivery{background:#f59e0b;color:#fff}
 .section{max-width:1100px;margin:auto;padding:50px 20px}
 .card{background:#fff;padding:25px;border-radius:15px;box-shadow:0 2px 12px rgba(0,0,0,.08);margin:15px 0}
 .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:15px}
@@ -27,10 +22,10 @@ min-height:75vh;color:#fff;display:flex;align-items:center;justify-content:cente
 .logo{font-size:40px}
 .float-wa{position:fixed;right:20px;bottom:20px;background:#25D366;color:#fff;padding:15px 18px;border-radius:50px;text-decoration:none;font-weight:bold}
 footer{background:#111;color:#fff;text-align:center;padding:20px}
+input,textarea{width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:8px;font-family:inherit}
 </style>
 </head>
 <body>
-
 <section class="hero">
 <div class="hero-content">
 <div class="logo">🏥</div>
@@ -41,8 +36,8 @@ footer{background:#111;color:#fff;text-align:center;padding:20px}
 <a class="btn call" href="tel:9258225297">📞 Call 9258225297</a>
 <a class="btn wa" href="https://wa.me/918077525297">💬 WhatsApp</a>
 <a class="btn map" href="https://maps.app.goo.gl/Qecp9mamppoERA5h7?g_st=atm">📍 Directions</a>
-</div>
-</section>
+<a class="btn delivery" href="#home-delivery">🚚 Home Delivery</a>
+</div></section>
 
 <div class="section">
 <div class="card">
@@ -50,6 +45,18 @@ footer{background:#111;color:#fff;text-align:center;padding:20px}
 <p>Trusted medical store serving Bhimgoda and nearby areas with genuine medicines, healthcare products and fast local home delivery.</p>
 <p><b>Timing:</b> 9:00 AM – 1:00 AM</p>
 <p><b>Address:</b> Basant Gali, Kharkhari, Bhimgoda, Haridwar, Uttarakhand - 249401</p>
+</div>
+
+<div class="card" id="home-delivery">
+<h2>🚚 Request Home Delivery</h2>
+<p>Fill the details below. WhatsApp will open automatically.</p>
+<form onsubmit="sendToWhatsApp();return false;">
+<input id="name" type="text" placeholder="Your Name" required>
+<input id="mobile" type="tel" placeholder="Mobile Number" required>
+<textarea id="medicine" placeholder="Medicine Name / Requirement"></textarea>
+<textarea id="address" placeholder="Delivery Address" required></textarea>
+<button class="btn delivery" type="submit">Submit Order on WhatsApp</button>
+</form>
 </div>
 
 <h2 style="margin:20px 0">Our Services</h2>
@@ -62,17 +69,28 @@ footer{background:#111;color:#fff;text-align:center;padding:20px}
 
 <h2 style="margin:30px 0 15px">Store Gallery</h2>
 <div class="gallery">
-<img src="store1.png">
-<img src="store2.png">
-<img src="store3.png">
-</div>
-</div>
+<img src="store1.png"><img src="store2.png"><img src="store3.png">
+</div></div>
 
 <a class="float-wa" href="https://wa.me/918077525297">WhatsApp Us</a>
 
-<footer>
-© Goswami Medical Store • Haridwar
-</footer>
+<footer>© Goswami Medical Store • Haridwar</footer>
 
-</body>
-</html>
+<script>
+function sendToWhatsApp(){
+const name=document.getElementById('name').value;
+const mobile=document.getElementById('mobile').value;
+const medicine=document.getElementById('medicine').value;
+const address=document.getElementById('address').value;
+const msg=`🏥 *Home Delivery Request*
+
+👤 Name: ${name}
+📞 Mobile: ${mobile}
+💊 Medicines: ${medicine}
+📍 Address: ${address}
+
+📸 Prescription photo will be attached separately.`;
+window.open("https://wa.me/918077525297?text="+encodeURIComponent(msg),"_blank");
+}
+</script>
+</body></html>
